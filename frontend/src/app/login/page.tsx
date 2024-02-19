@@ -13,6 +13,7 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
 
 const Page = () => {
   const router = useRouter();
@@ -66,6 +67,7 @@ const Page = () => {
             margin="normal"
             required
             fullWidth
+            color="success"
             id="email"
             label="Имэйл"
             placeholder="Имэйл хаягаа оруулна уу"
@@ -80,6 +82,7 @@ const Page = () => {
             margin="normal"
             required
             fullWidth
+            color="success"
             name="password"
             label="Нууц үг"
             type="password"
@@ -89,30 +92,55 @@ const Page = () => {
             }
             autoComplete="current-password"
           />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Сануулах"
-          />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-          >
-            Нэвтрэх
-          </Button>
           <Grid container>
-            <Grid item xs>
+            <Grid
+              item
+              xs
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "end",
+              }}
+            >
               <Link href="#" variant="body2">
                 Нууц үг сэргээх?
               </Link>
             </Grid>
-            <Grid item>
-              <Link href="#" variant="body2">
-                {"Бүртгүүлэх"}
-              </Link>
-            </Grid>
           </Grid>
+          {/* <FormControlLabel
+            control={<Checkbox value="remember" color="primary" />}
+            label="Сануулах"
+          /> */}
+          <Stack>
+            <Button
+              type="submit"
+              fullWidth
+              color="success"
+              variant="contained"
+              sx={{ mt: 3, mb: 3 }}
+            >
+              Нэвтрэх
+            </Button>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              эсвэл
+            </Box>
+
+            <Button
+              variant="outlined"
+              type="button"
+              fullWidth
+              color="success"
+              sx={{ mt: 3, mb: 3 }}
+            >
+              Бүртгүүлэх
+            </Button>
+          </Stack>
         </Box>
       </Box>
     </Container>
